@@ -1,20 +1,38 @@
 files2map
 =========
 
-Generate sitemap from local files
+Generate sitemap from local files.
 
-## require
+## Require
 
  * lxml
 
-## usage
+## Usage
 
+	files2map.py [-h] [--config CONFIG] html_file [html_file ...]
+
+### Example
+
+	# Number of files is less.
 	./files2map.py --config config.json `find ./path/to/target/ -name '*.html'`
+	# Number of files is large.
+	find ./path/to/target/ -name '*.html' -exec ./files2map.py --config config.json {} \;
 
-## config file
+## Config file
+
+### Description
+
+ * `COLUMN_ORDER`: <br>
+   Define a sequence of elements in a part.
+ * `PARTS`: <br>
+   Define each element.
+ * `type`: <br>
+   Set `xpath` or `path`.
+ * `replace`: <br>
+   Define a regular expression substitution.
+   
 
 ### example
-
 
 
 	{
